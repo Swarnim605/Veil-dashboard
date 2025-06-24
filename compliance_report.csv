@@ -1,0 +1,7 @@
+Vehicle ID,Manufacturer,Model,Year,Compliance Standard,Status,Inspection Date,Remarks
+UC-301,Toyota,Prius,2021,EU R117,Compliant,10/06/2025,Passed all thresholds
+UC-302,BMW,i3,2020,ISO 14001,Compliant,22/05/2025,Meets sustainability criteria
+UC-303,Ford,Focus,2019,WVTA,Non-Compliant,15/04/2025,Emissions exceeded limit
+UC-304,Volkswagen,Golf,2022,REACH,Compliant,01/06/2025,Material safe-certified
+UC-305,Tesla,Model 3,2021,UN ECE R10,Compliant,20/06/2025,Electromagnetic compliance OK
+UC-306,Hyundai,Kona EV,2023,ISO 26262,Compliant,21/06/2025,Functional safety verified
