@@ -51,9 +51,9 @@
 <div id="login" class="hidden fixed inset-0 min-h-screen flex items-center justify-center bg-veil-lightbg dark:bg-veil-darkbg opacity-0 transition-opacity duration-700 z-40">
   <div class="bg-veil-lightcard dark:bg-veil-darkcard p-8 rounded-2xl shadow-xl w-96">
     <h2 class="text-2xl font-bold mb-4 text-veil-lighttext dark:text-veil-darktext">Login to VEIL</h2>
-    <input type="text" placeholder="Username" class="w-full mb-4 px-4 py-2 border rounded bg-gray-50 dark:bg-veil-darkbg text-veil-lighttext dark:text-veil-darktext" />
-    <input type="password" placeholder="Password" class="w-full mb-4 px-4 py-2 border rounded bg-gray-50 dark:bg-veil-darkbg text-veil-lighttext dark:text-veil-darktext" />
-    <button onclick="showDashboard()" class="w-full bg-veil-primary text-white font-semibold py-2 rounded hover:bg-teal-700 transition">Login</button>
+   <input id="username" type="text" placeholder="Username" class="w-full mb-4 px-4 py-2 border rounded bg-gray-50 dark:bg-veil-darkbg text-veil-lighttext dark:text-veil-darktext" />
+<input id="password" type="password" placeholder="Password" class="w-full mb-4 px-4 py-2 border rounded bg-gray-50 dark:bg-veil-darkbg text-veil-lighttext dark:text-veil-darktext" />
+    <button onclick="validateLogin()" class="w-full bg-veil-primary text-white font-semibold py-2 rounded hover:bg-teal-700 transition">Login</button>
   </div>
 </div>
 
@@ -114,6 +114,17 @@
       setTimeout(() => { login.classList.remove('opacity-0'); }, 50);
     }, 800);
   }
+  function validateLogin() {
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  if (username === 'John Doe' && password === 'VEIL') {
+    showDashboard();
+  } else {
+    alert('Invalid username or password. Please try again.');
+  }
+}
+
   function showDashboard() {
     document.getElementById('login').classList.add('hidden');
     document.getElementById('dashboard').classList.remove('hidden');
@@ -152,7 +163,7 @@
         </div>
         <div class="bg-veil-lightcard dark:bg-veil-darkcard p-6 rounded-2xl shadow hover:shadow-lg transition flex flex-col justify-between">
           <div class="text-sm font-medium text-veil-lighttext2 dark:text-veil-darktext2 mb-2">Export Compliance Sheet</div>
-          <button onclick="window.open('./compliance_report.csv')" class="mt-2 px-4 py-2 bg-veil-primary text-white font-semibold rounded hover:bg-teal-700 transition">Download</button>
+          <button  onclick="window.open('./compliance_report.csv')" class="mt-2 px-4 py-2 bg-veil-primary text-white font-semibold rounded hover:bg-teal-700 transition">Download</button>
         </div>
         <div class="bg-veil-lightcard dark:bg-veil-darkcard p-6 rounded-2xl shadow col-span-1 md:col-span-3 mt-2">
           <h3 class="text-lg font-semibold mb-4 text-veil-lighttext dark:text-veil-darktext">Monthly CO₂ Emission Rate per Car Batch</h3>
